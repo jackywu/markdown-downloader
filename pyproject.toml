@@ -1,0 +1,22 @@
+[project]
+name = "markdown-downloader"
+version = "1.0.0"
+description = "使用 Typer 和 LiteLLM 构建的 Markdown 下载工具，支持 LLM 优化内容"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "typer>=0.12.0",
+    "litellm>=1.0.0",
+    "platformdirs>=4.0.0",
+    "requests>=2.31.0",
+]
+
+[project.scripts]
+markdown-downloader = "main:app"
+
+[dependency-groups]
+dev = [
+    "mypy>=1.19.1",
+    "pyinstaller>=6.18.0",
+    "ruff>=0.14.13",
+]
