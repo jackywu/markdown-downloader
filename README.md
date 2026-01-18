@@ -20,13 +20,41 @@
 
 ### 使用 uv（推荐）
 
+### 方式 1: 使用 uv 安装（开发模式）
+
 ```bash
 # 安装依赖
 uv sync
 
-# 或者使用 pip
-pip install -e .
+# 运行程序
+python main.py --help
 ```
+
+### 方式 2: 编译为独立可执行文件（推荐用于生产环境）
+
+使用 PyInstaller 编译为单文件可执行程序，无需 Python 环境即可运行：
+
+```bash
+# 编译
+make build
+
+# 安装到系统目录
+make install
+
+# 现在可以直接使用
+markdown-downloader --help
+```
+
+**Makefile 命令说明：**
+
+- `make build` - 编译单文件可执行程序（支持 Windows/Linux/macOS）
+- `make install` - 安装编译后的二进制文件到系统目录
+  - Linux/macOS: `~/.local/bin`
+  - Windows: `%LOCALAPPDATA%\Programs`
+- `make clean` - 清理编译临时文件
+- `make uninstall` - 卸载已安装的二进制文件
+- `make test` - 测试编译后的程序
+- `make help` - 显示所有可用命令
 
 ## 🚀 快速开始
 
